@@ -13,18 +13,7 @@ Expected Result,"Account is not created, and the user is informed that the minim
 Actual Result,"Account successfuly created with following message: ""Account Opened! Congratulations, your account is now open.
 Your new account number: 51528"". Balance of account no. 51417 changed to -$84.50 and balance of created account no. 51528 is $100.00."
 Reproducibility,3/3
-Evidence,Screenshot_BUG_002.png
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
+Evidence,https://github.com/DenisaHazakova/Portfolio-Project-1-ParaBank/blob/1c9701cb4f578e0d3a2ed22c8cd164524c9e24e3/screenshots/Screenshot_BUG_002.png
 ,Screenshot_2_BUG_002.png
 ,"
 
