@@ -23,8 +23,7 @@ Funds moved from the destination account to the source account,
 the opposite of the selected direction."
 Reproducibility,3/3
 Evidence,https://github.com/DenisaHazakova/Portfolio-Project-1-ParaBank/blob/b1ec241859897c5c859c55ea5ac4717ccd3bb95f/screenshots/Screenshot1_BUG_003b.png
-,Screenshot2_BUG_003b.png
-,
+,https://github.com/DenisaHazakova/Portfolio-Project-1-ParaBank/blob/696a7f60037a30c8c29470ec2d3b4a43d14d7a8f/screenshots/Screenshot2_BUG_003b.png
 ,Screenshot3_BUG_003b.png
 ,
 Related items,"TS_068, BUG_003a. No test case (found during exploratory testing)."
