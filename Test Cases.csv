@@ -1,0 +1,248 @@
+,,,,,,,,,
+,,,,,,,,,
+Test Case ID,Test Scenario ID,Feature,Title,Preconditions,Steps,Expected Result,Actual Result,Status,Notes
+TC_001,"TS_001, TS_021",Registration,Verify user registration with valid data and redirection to correct page after registration,"1. Browser is open 
+2. User is on https://parabank.parasoft.com 
+3. User has not registered before","1. Click Register link 
+2. Fill in First Name: John 
+3. Fill in Last Name: Doe 
+4. Fill in Address: 123 Main Street 
+5. Fill in City: New York 
+6. Fill in State: NY 
+7. Fill in Zip Code: 10001 
+8. Fill in Phone #: 1234567890 
+9. Fill in SSN: 123-45-6789 
+10. Fill in Username: johndoe123 
+11. Fill in Password: Password123 
+12. Fill in Confirm: Password123 
+13. Click Register button","1. User is successfully registered 
+2. User is redirected to Account Services page 
+3. Welcome message displays correct username","After succesfull registration, user has been redirected to Accounts Services with message Welcome johndoe123.",Pass,
+TC_002,TS_002,Registration,Verify user registration with already registred Username,"1. Browser is open 
+2. User is on https://parabank.parasoft.com 
+3. User has been registered already","1. Click Register link 
+2. Fill in First Name: Marc 
+3. Fill in Last Name: Davis
+4. Fill in Address: 321 London Street 
+5. Fill in City: London 
+6. Fill in State: UK 
+7. Fill in Zip Code: 13331 
+8. Fill in Phone #: 1231231230 
+9. Fill in SSN: 123-45-3456 
+10. Fill in Username: johndoe123 
+11. Fill in Password: Password1 
+12. Fill in Confirm: Password1 
+13. Click Register button",Error message username already registered is displayed,Error message This username already exists appears on the right side of Username field.,Pass,
+TC_003,TS_015,Registration,Verify user registration with not matching password,"1. Browser is open 
+2. User is on https://parabank.parasoft.com 
+3. User has not registered before","1. Click Register link 
+2. Fill in First Name: John 
+3. Fill in Last Name: Doe 
+4. Fill in Address: 123 Main Street 
+5. Fill in City: New York 
+6. Fill in State: NY 
+7. Fill in Zip Code: 10001 
+8. Fill in Phone #: 1234567890 
+9. Fill in SSN: 123-45-6789 
+10. Fill in Username: johndoe1456 
+11. Fill in Password: Password123 
+12. Fill in Confirm: Password 
+13. Click Register button",Error message next to the field Password or Confirm appears that passwords do not match after Register button click,Error message Passwords did not match. displays right next to Confirm field after clicking Register button,Pass,
+TC_004,"TS_022, TS_024",Login / Logout,Verify successful login with valid credentials and redirected to Home page after login,"1. Browser is open 
+2. User is on https://parabank.parasoft.com/parabank/index.htm
+3. User has been registered already","1. Fill in Username: johndoe123
+2. Fill in Password: Password123
+3. Click LOG IN button
+",User is succesfully logged in and redirected to Account Services page and Accounts Overview table is displayed,"User is succesfully logged in, redirected to Account Services page (https://parabank.parasoft.com/parabank/overview.htm) and Accounts Overview table is displayed",Pass,
+TC_005,"TS_031, TS_032",Login / Logout,Verify successful logout and redirected to login page after logout,"1. Browser is open 
+2. User is succesfully logged in with Username: johndoe123 and Password: Password123
+3. User is on https://parabank.parasoft.com/parabank/overview.htm",1. Click Log Out link,User is successfully logged out and redirected to general ParaSoft page,User is successfully logged out and redirected to general ParaSoft page,Pass,
+TC_006,TS_033,Login / Logout,Verify user cannot access account pages after logout,"1. Browser is open 
+2. User is on https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC
+3. User is not logged in","1. Go to https://parabank.parasoft.com/parabank/index.htm
+2. Do NOT log in
+3. Click Account History link in Online Services section",Error message displays to notify user that it needs to be logged in first.,User is redirected to XML document,Fail,Security Bug
+TC_007,"TS_035, TS_041",Open Account,"Verify that CHECKING account can be created, and new account creation that new account number is generated","1. Browser is open 
+2. User is succesfully logged in with Username: johndoe123 and Password: Password123
+3. User is on https://parabank.parasoft.com/parabank/openaccount.htm","1. From dropdown What type of Account would you like to open?, select CHECKING
+2. Select account number 18672
+3. Click OPEN NEW ACCOUNT button",Message Your Checking Account number XXXX has been succesfully created ,"Following message displayed: Account Opened!
+Congratulations, your account is now open.
+Your new account number: 18894",Pass,BUG_001
+TC_008,TS_036,Open Account,Verify that SAVINGS account can be created,"1. Browser is open 
+2. User is succesfully logged in with Username: johndoe123 and Password: Password123
+3. User is on https://parabank.parasoft.com/parabank/openaccount.htm","1. From dropdown What type of Account would you like to open?, select SAVINGS
+2. Select account number 18672
+3. Click OPEN NEW ACCOUNT button",Message Your Savings Account number XXXX has been succesfully created ,"Following message displayed: Account Opened!
+Congratulations, your account is now open.
+Your new account number: 19227",Pass,
+TC_009,TS_038,Open Account,Verify new account cannot be created when balance on existing account is less than 100$,"1. Browser is open 
+2. User is succesfully logged in with Username: johndoe123 and Password: Password123
+3. Account 18672 has -100$ balance and 0$ available amount
+3. User is on https://parabank.parasoft.com/parabank/openaccount.htm","1. From dropdown What type of Account would you like to open?, select CHECKING
+2. Select account number 18672
+3. Click OPEN NEW ACCOUNT button",Message You do not have a minimum amount of 100$ to open a new account displays,"Following message displayed: Account Opened!
+Congratulations, your account is now open.
+Your new account number: 19449",Fail,BUG_002
+TC_010,TS_043,Open Account,Verify newly created account appears in Accounts Overview,"1. Browser is open 
+2. User is succesfully logged in with Username: johndoe123 and Password: Password123
+3. User is on https://parabank.parasoft.com/parabank/overview.htm",1. Find the account number 19227 in Accounts Overview table,Account number 19227 is listed in Accounts Overview table.,Account number 19227 is listed in Accounts Overview table.,Pass,
+TC_011,TS_046,Accounts Overview,Verify that each Account number is clickable and redirects to corresponding Account Details page,"1. Browser is open 
+2. User is succesfully logged in with Username: johndoe123 and Password: Password123
+3. User is on https://parabank.parasoft.com/parabank/overview.htm
+4. User has already 4 accounts open: 35655 (CHECKING), 35766 (SAVINGS), 35877 (LOAN), 36210 (SAVINGS)","1. Click on 35655 account number link
+2. Press Back on the browser
+3. Click on 35766 account number link
+4. Press Back on the browser
+5. Click on 35877 account number link
+6. Press Back on the browser
+7. Click on 36210 account number link
+8. Press Back on the browser","After each click on the corresponsing account number, user is redirected to Account Details page.On the page is displayed: Account details, Account Activity filtering. Then after Back button click on the browser, user is redirected back to Accounts Overview","After each click on the corresponding account number, user is redirected to Account Details page (https://parabank.parasoft.com/parabank/activity.htm?id=XXXX). Account Details lists correspnding Account Number, Account Type, Balance, Available. Account Activity has filtering functionality. Based on filtering, corresponding Account Activity table with transfers done is displayed.",Pass,
+TC_012,TS_047,Accounts Overview,Verify that Total is correctly calculated from each balance of existing account,"1. Browser is open 
+2. User is succesfully logged in with Username: johndoe123 and Password: Password123
+3. User is on https://parabank.parasoft.com/parabank/overview.htm
+4. User has already 4 accounts open: 35655 (CHECKING), 35766 (SAVINGS), 35877 (LOAN), 36210 (SAVINGS)","1. Sum of balance on Account 35655 number(288,16$), 35766 (115$), 35877 (900$), 36210 (100$)
+2. The result is: 1403,16$","Total, displayed at the end of the Accounts Overview table is 1403,16$","Total, displayed at the end of the Accounts Ovwerview table is 1403,16$",Pass,
+TC_013,TS_051,Accounts Overview,"Verify that on Account Details page of the clicked account, Balance amount is correctly displayed","1. Browser is open 
+2. User is succesfully logged in with Username: johndoe123 and Password: Password123
+3. User is on https://parabank.parasoft.com/parabank/overview.htm
+4. User has already 4 accounts open: 35655 (CHECKING), 35766 (SAVINGS), 35877 (LOAN), 36210 (SAVINGS)","1. Click on account number 35655
+2. Sum all transactions from Account Activity table
+3. Compare the result of sum with balance displayed in Account Details
+4. Click on account number 35766
+5. Sum all transactions from Account Activity table
+6. Compare the result of sum with balance displayed in Account Details
+7. Click on account number 35877
+8. Sum all transactions from Account Activity table
+9. Compare the result of sum with balance displayed in Account Details
+10. Click on account number 36210
+11. Sum all transactions from Account Activity table
+12. Compare the result of sum with balance displayed in Account Details","Sum of transactions of 35655 is 288.16$.The balance displayed in Account Details section is 288.16$. The values are the same.
+Sum of transactions of 35766 is 288.16$.The balance displayed in Account Details section is 288.16$. The values are the same.",Sum of transactions of 35655 is 227.34$.The balance displayed in Account Details section is 288.16$. The values are not the same.,Pass,"Original fail was a wrong expectation; BUG_004 rejected, not a defect."
+TC_014,TS_057,Accounts Overview,"Verify that on Account Details page of the clicked account, button Go display table with Transaction history details according to selected filter","1. Browser is open 
+2. User is succesfully logged in with Username: parasoft and Password: demo
+3. User is on https://parabank.parasoft.com/parabank/overview.htm
+4. User has already 4 accounts open: 13455 (CHECKING), 15009 (CHECKING), 15120 (SAVINGS).","1. Click on account number 13455
+2. Select activity period ""october""
+3. Select Type ""Debit""
+4. Press buton ""Go""",Account Activity displays a table with listed transaction completed.,Account Activity displays a table with listed transaction completed.,Pass,BUG_005 (Critical)
+TC_015,TS_065,Transfer Funds,Verify transfer of amount that is higher than balance from selected account to another account is not successful,"1. Browser is open
+2. User is successfully loggen in with Username: joe and Password: demo
+3. User is on https://parabank.parasoft.com/parabank/transfer.htm
+4. User has Balance of 100$ on Account Number 12789","1. Fill in Amount field with value 200
+2. Select 12789 option from dropdown From account # and select option 12345 from dropdown to account #.
+3. Click TRANSFER button.",Error message displays that transfer cannot be proceeded because selected amount to be transferred is higher than Balance amount on the selected account.,"Following message displayed: ""Transfer Complete!
+$200.00 has been transferred from account #12789 to account #12345.
+See Account Activity for more details."" and balance of the Account number 12789 is now -100$.",Fail,"BUG_006 (Critical, Functional)"
+TC_016,"TS_066, TS_069",Transfer Funds,Verify transfer of amount that is lower than balance from selected account to another account is successful and that amount that was transferred is recalculated and displayed in the selected account in Accounts Overview page,"1. Browser is open
+2. User is successfully loggen in with Username: joe and Password: demo
+3. User is on https://parabank.parasoft.com/parabank/transfer.htm
+4. User has Balance of 100$ on Account Number 12567","1. Fill in Amount field with value 99
+2. Select 12567 option from dropdown From account # and select option 12345 from dropdown to account #.
+3. Click TRANSFER button.","User is notified about successful transfer of 99$ from account number 12567 to 12345. In the Account Details of 12567, balance changed from 100$ to 1$.","Following message appeared: ""Transfer Complete!
+$99.00 has been transferred from account #12567 to account #12345.
+See Account Activity for more details."" The balance of Account number 12567 in Accounts Overview is 1$.",Pass,
+TC_017,"TS_067, TS_071",Transfer Funds,Verify transfer of amount that is the same as balance from selected account to another account is successful and that success message displays correct amount and account numbers after successful transfer,"1. Browser is open
+2. User is successfully logged in with Username: joe and Password: demo
+3. User is on https://parabank.parasoft.com/parabank/transfer.htm
+4. User has Balance of 100$ on Account Number 12789","1. Fill in Amount field with value 100
+2. Select 12789 option from dropdown From account # and select option 12345 from dropdown to account #.
+3. Click TRANSFER button.","User is notified about successful transfer of 100$ from account number 12789 to 12345. In the Account Details of 12789, balance changed from 100$ to 0$ and the amount of 100$ has been added to balance of account number 12345.","Following message displayed: ""Transfer Complete!
+$100.00 has been transferred from account #12789 to account #12345. See Account Activity for more details."" The balance amount of Account Number 12789 is 0$ and 100$ has been added to Account Number 12345.",Pass,
+TC_018,TS_076,Bill Payment,"Verify that after clicking on Bill Pay link, user is successfully redirected to Bill Pay page","1. Browser is open
+2. User is successfully logged in with Username: joe and Password: demo
+3. User is on https://parabank.parasoft.com/parabank/index.htm
+",1. Click on link Bill Pay,"User is redirected to page https://parabank.parasoft.com/parabank/billpay.htm and header Bill Payment Service is displayed. User can fill out table with following fields: Payee Name, Address, City, State, Zip Code, Phone #, Account #, Verify Account #, Amount #, From Account # and send the payment with button. ","User is redirected to page https://parabank.parasoft.com/parabank/billpay.htm and header Bill Payment Service is displayed. User can fill out table with following fields: Payee Name, Address, City, State, Zip Code, Phone #, Account #, Verify Account #, Amount #, From Account # and send the payment with button. ",Pass,
+TC_019,TS_093,Bill Payment,Verify filling out amount higher than a balance from selected account in Amount field is not accepted,"1. Browser is open
+2. User is successfully logged in with Username: joe and Password: demo
+3. User is on https://parabank.parasoft.com/parabank/billpay.htm
+4. User has 515.50 $ on Account no. 14787
+
+
+
+
+
+
+
+","1. Fill out Payee Name with Jan Prvy
+2. Fill out Address with Hlavna 1
+3. Fill out City with Zilina
+4. Fill out State with Slovakia
+5. Fill out Zip Code with 80090
+6. Fill out Phone # with +421900600500
+7. Fill out Account # with 123
+8. Fill out Verify Account # with 123
+9. Fill out Amount # with 1000
+10. Select option From Account # to be 14787
+11. Click on button SEND PAYMENT",Error message about insufficient balance on 14787 account. Payment not possible to proceed.,Bill Payment to Jan Prvy in the amount of $1000.00 from account 14787 was successful. Actual balance of account 14787 after payment is         -$484.50.,Fail,BUG_007
+TC_020,"TS_098, TS_099, TS_100",Bill Payment,"Verify after filled fields succesfully and clicking on button SEND PAYMENT, successful message appears. Verify that account balance is reduced by payment amount after successful bill payment. Verify success message displays correct Payee Name, amount and account after successful payment","1. Browser is open
+2. User is successfully logged in with Username: joe and Password: demo
+3. User is on https://parabank.parasoft.com/parabank/billpay.htm
+4. User has 100 $ on Account no. 15786
+
+
+
+
+
+
+
+","1. Fill out Payee Name with Jan Prvy
+2. Fill out Address with Hlavna 1
+3. Fill out City with Zilina
+4. Fill out State with Slovakia
+5. Fill out Zip Code with 80090
+6. Fill out Phone # with +421900600500
+7. Fill out Account # with 123
+8. Fill out Verify Account # with 123
+9. Fill out Amount # with 50
+10. Select option From Account # to be 15786
+11. Click on button SEND PAYMENT","Bill Payment to Jan Prvy in the amount of $50.00 from account 15786.
+   was successful. Balance of account 15786 is $50.",Bill Payment Complete. Bill Payment to Jan Prvy in the amount of $50.00 from account 15786 was successful. See Account Activity for more details. Actual balance of account 15786 after payment is $ 50.,Pass,
+TC_021,TS_101,Find Transaction,"Verify that after clicking on Find Transaction link, user is successfully redirected to Find Transaction page","1. Browser is open
+2. User is successfully logged in with Username: joe and Password: demo
+3. User is on https://parabank.parasoft.com/parabank/index.htm
+",1. Click on link Find Transactions,"User is redirected to page https://parabank.parasoft.com/parabank/findtrans.htm and header Find Transactions is displayed. User can filter based on Select an account, Find by Transaction ID, Find by Date, Find by Date Range, Find by Amount with the buttons FIND TRANSACTIONS","User is redirected to page https://parabank.parasoft.com/parabank/findtrans.htm and header Find Transactions is displayed. User can filter based on Select an account, Find by Transaction ID, Find by Date, Find by Date Range, Find by Amount with the buttons FIND TRANSACTIONS",Pass,
+TC_022,TS_109,Find Transaction,"Verify filling out data correctly and clicking on button FIND TRANSACTION, Transaction Results table appears on the new page with transaction details (date, Transaction, Debit(-), Credit(+))","1. Browser is open
+2. User is successfully logged in with Username: joe and Password: demo
+3. User is on https://parabank.parasoft.com/parabank/findtrans.htm
+4. Account 14121 has a Bill Payment to Jan Prvy of $100.00 dated 11-04-2026","1. Select option 14121 from dropdown named Select an account.
+2. Fill out Find by Date Range with 01-30-2022 and 11-04-2026.
+3. Click on button FIND TRANSACTIONS.","User is redirected to page with Transaction Results. Table displays Date as 11-04-2026, Transaction name ""Bill Payment to Jan Prvy"", Debit (-) ""$100.00"".","User is redirected to page with Transaction Results. Table displays Date as 11-04-2026, Transaction name ""Bill Payment to Jan Prvy"", Debit (-) ""$100.00"".",Pass,
+TC_023,TS_110,Find Transaction,"Verify that Transaction Results table shows data corresponding with the exact transaction made (correct date, Transaction, Debit(-), Credit(+))","1. Browser is open
+2. User is successfully logged in with Username: joe and Password: demo
+3. User is on https://parabank.parasoft.com/parabank/findtrans.htm
+4. Transaction ID 16696 exists on account 14787
+   (created by Bill Payment in TC_019)","1. Select option 14787 from dropdown named Select an account.
+2. Fill out Find by Transaction ID with 16696.
+3. Click button FIND TRANSACTIONS.","User is redirected to page with Transaction Results. Table displays Date as 11-04-2026, Transaction name ""Bill Payment to Jan Prvy"", Debit (-) ""$1000.00"".","User is redirected to page with Transaction Results. Table displays Date as 11-04-2026, Transaction name ""Bill Payment to Jan Prvy"", Debit (-) ""$1000.00"".",Pass,
+TC_024,TS_113,Update Contact Info,"Verify that after clicking on Update Contact Info link, user is successfully redirected to Update Contact Info page","1. Browser is open
+2. User is successfully logged in with Username: joe and Password: demo
+3. User is on https://parabank.parasoft.com/parabank/index.htm
+",1. Click on link Update Contact Info,"User is redirected to page https://parabank.parasoft.com/parabank/updateprofile.htm and Update profile formular is displayed with followinf fields: First Name, Last Name, Address, City, State, Zip Code and Phone #. ","User is redirected to page https://parabank.parasoft.com/parabank/updateprofile.htm and Update profile formular is displayed with followinf fields: First Name, Last Name, Address, City, State, Zip Code and Phone #. ",Pass,
+TC_025,TS_122,Update Contact Info,"Verify after filling out field succesfully, and click on button Update Profile, message Profile Updated
+Your updated address and phone number have been added to the system. is shown","1. Browser is open
+2. User is successfully logged in with Username: joe and Password: demo
+3. User is on https://parabank.parasoft.com/parabank/updateprofile.htm
+4. All fields are already prefilled with actual profile data.
+5. Value of Last Name is Madar.","1.  Change Last Name to Madarsky
+2. Click on button UPDATE PROFILE.",A confirmation that the profile was updated. The message should not claim address and phone were updated when only Last Name was changed.,"Message Profile Updated
+Your updated address and phone number have been added to the system.",Fail,"BUG_008 (Low, Content/UI text)"
+TC_026,TS_123,Update Contact Info,Verify that filled and updated info are overwritten and displayed on Update Contact Info page,"1. Browser is open
+2. User is successfully logged in with Username: joe and Password: demo
+3. User is on https://parabank.parasoft.com/parabank/updateprofile.htm
+4. Last Name in the TC_025 has been changed to Madarsky",1. Click on Update Contact Info,Last Name shows as Madarsky.,Last Name shows as Madarsky.,Pass,
+TC_027,"TS_126, TS_129",Loan Request,"Verify that after filling out all fields correctly, and clicking on button Apply Now, user is redirected to a page with loan details","1. Browser is open 
+2. User is successfully logged in (new user, registered 2026-11-08) 
+3. User is on https://parabank.parasoft.com/parabank/requestloan.htm 
+4. Default account holds $515.50","1. Fill out Loan Amount field with 5000. 
+2. Fill out Down Payment field with 10. 
+3. Select the default account from dropdown ""From account #"". 
+4. Click button APPLY NOW.","Loan request is processed. The page shows Loan Provider, Date and Status (Approved or Denied) with a message.","Page displays: ""Loan Request Processed. Loan Provider: Wealth Securities Dynamic Loans (WSDL). Date: 11-8-2026. Status: Denied. We cannot grant a loan in that amount with your available funds.""",Pass,"Initial run 2026-11-04 (joe/demo, account 14454) returned ""Error! An internal error has occurred and has been logged."" (Fail). Not reproduced on 2026-11-08 with a new user. BUG_009: Cannot reproduce."
+TC_028,TS_131,Loan Request,"Verify that after requesting a loan succesfully, new account created is displayed in Accounts Overview with correct number","1. Browser is open
+2. User is successfully logged in with Username: joe and Password: demo
+3.  User has account number 14454 with balance of $ 515.50.
+4. User is on https://parabank.parasoft.com/parabank/index.htm",,,,Not Executed,Loan was not possible to request
+TC_029,TS_137,Loan Request,"Verify that after requesting a loan that is Denied, no new account is created","1. Browser is open
+2. User is successfully logged in with Username: joe and Password: demo
+3.  User has account number 14454 with balance of $ 515.50.
+4. User is on https://parabank.parasoft.com/parabank/index.htm",,,,Not Executed,Loan was not possible to request
