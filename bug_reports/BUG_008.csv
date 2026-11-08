@@ -14,19 +14,7 @@ Actual Result,"Website displays: ""Profile Updated
 Your updated address and phone number have been added to the system.""
 Observation after navigate to Update Contact Info: Last Name has been changed to ""Madar"""
 Reproducibility,1/1
-Evidence,Screenshot_BUG_008_original.png
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
+Evidence,https://github.com/DenisaHazakova/Portfolio-Project-1-ParaBank/blob/e020500fe3bc5559901433de9d53171c37a4b0de/screenshots/Screenshot_BUG_008_original.png
 ,Screenshot_BUG_008_updated_data.png
 ,
 ,Screenshot_BUG_008_result.png
