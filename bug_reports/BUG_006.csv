@@ -18,24 +18,9 @@ Observed in Accounts Overview afterwards:
 - 33768: $100.00 -> -$100.00 (- $200.00).
 A $200.00 transaction was recorded in Account Activity (Transaction ID 47998)."
 Reproducibility,3/3
-Evidence,Screenshot1_BUG_006.png
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
+Evidence,https://github.com/DenisaHazakova/Portfolio-Project-1-ParaBank/blob/853fb384b6cc0ec26bbad9636687f8793b015b72/screenshots/Screenshot1_BUG_006.png
 ,Screenshot2_BUG_006.png
-,
 ,Screenshot3_BUG_006.png
-,
 ,Screenshot4_BUG_003.png
-,
 Related items,"TS_065, TC_015 (original finding; reproduced on a new user, 2026-11-08)"
 Status,New
