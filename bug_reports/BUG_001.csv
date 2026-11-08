@@ -10,18 +10,6 @@ Steps to Reproduce,1. User is located on web url https://parabank.parasoft.com/p
 Expected Result,User is redirected to login page to insert login credentials.
 Actual Result,User is redirected to url https://parabank.parasoft.com/parabank/services/bank?_wadl&_type=xml which shows REST API details. No Account history is shown.
 Reproducibility,3/3
-Evidence,"Screenshot_BUG_001.png
-"
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
+Evidence, https://github.com/DenisaHazakova/Portfolio-Project-1-ParaBank/blob/3d4b93994577162f531dbce4e908eea2863ae466/screenshots/Screenshot_BUG_001.png
 Related items,Related to TS_033; found during TC_007
 Status,New
