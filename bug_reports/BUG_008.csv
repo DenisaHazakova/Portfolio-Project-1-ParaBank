@@ -15,7 +15,7 @@ Your updated address and phone number have been added to the system.""
 Observation after navigate to Update Contact Info: Last Name has been changed to ""Madar"""
 Reproducibility,1/1
 Evidence,https://github.com/DenisaHazakova/Portfolio-Project-1-ParaBank/blob/e020500fe3bc5559901433de9d53171c37a4b0de/screenshots/Screenshot_BUG_008_original.png
-,https://github.com/DenisaHazakova/Portfolio-Project-1-ParaBank/blob/c4b51427dfcca2b0250e98d244f64d3de29217a4/screenshots/Screenshot_BUG_008_update_profile.png
+,https://github.com/DenisaHazakova/Portfolio-Project-1-ParaBank/blob/8e3132f41eea2145bdd76718d53426c8c0fff014/screenshots/Screenshot_BUG_008_updated_data.png
 ,https://github.com/DenisaHazakova/Portfolio-Project-1-ParaBank/blob/934962dee3aaa1d9f55a0740fb523c175fbd1712/screenshots/Screenshot_BUG_008_result.png
 ,https://github.com/DenisaHazakova/Portfolio-Project-1-ParaBank/blob/fcd24c0a7acda4ac10fd2105df8a13ee2c962661/screenshots/Screenshot_BUG_008_update_profile.png
 Related items,"TS_122, TC_025 (original finding; reproduced on a new user, 2026-11-08)"
