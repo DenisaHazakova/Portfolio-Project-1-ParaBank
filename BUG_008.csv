@@ -1,0 +1,37 @@
+Bug ID,BUG_008
+Title,"Update Profile confirmation says address and phone number were updated, although only Last Name was changed"
+Severity,"Low (misleading message text; data is saved correctly, no financial or functional impact)"
+Type,Content / UI text
+Feature,Update Contact Info
+Environment,"Chrome (150.0.7871.125 ), macOS 12.7.5, https://parabank.parasoft.com/parabank (2026-11-08)"
+Preconditions,"User has already registered and logged in with username janmadarsky. User is located on url https://parabank.parasoft.com/parabank/updateprofile.htm 
+Profile data as entered at registration (Last Name ""Madarsky"", other fields unchanged)."
+Steps to Reproduce,"1. Change value of field ""Last Name:"" from ""Madarsky"" to ""Madar"""
+,2. All other fields stay unchanged
+,"3. Click the button ""UPDATE PROFILE"""
+Expected Result,"The confirmation message does not claim that the address and phone number were updated when only Last Name was changed. The message is generic (e.g. ""Your profile has been updated"") or names the changed field. Based on standard UX practice; no specification available."
+Actual Result,"Website displays: ""Profile Updated
+Your updated address and phone number have been added to the system.""
+Observation after navigate to Update Contact Info: Last Name has been changed to ""Madar"""
+Reproducibility,1/1
+Evidence,Screenshot_BUG_008_original.png
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,Screenshot_BUG_008_updated_data.png
+,
+,Screenshot_BUG_008_result.png
+,
+,Screenshot_BUG_008_update_profile.png
+,
+Related items,"TS_122, TC_025 (original finding; reproduced on a new user, 2026-11-08)"
+Status,New

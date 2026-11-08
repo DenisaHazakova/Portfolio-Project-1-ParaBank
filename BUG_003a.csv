@@ -1,0 +1,32 @@
+Bug ID,BUG_003a
+Title,Transfer of $0 succesfully realized within Transfer Funds feature
+Severity,Medium (A meaningless $0.00 record is written to the transaction history)
+Type,Functional (Missing input validation)
+Feature,Transfer Funds
+Environment,"Chrome (150.0.7871.125 ), macOS 12.7.5, https://parabank.parasoft.com/parabank (2026-11-07)"
+Preconditions,User has already registered and logged in with username janmadarsky. User is located on url https://parabank.parasoft.com/parabank/transfer.htm. User has balance of $100 on account no. 51528 and -$84.50 on account no. 51417.
+Steps to Reproduce,"1. Type 0 in field ""Amount:"" ."
+,"2. Select account no. 51528 from dropdown ""From account #"""
+,"3. Select account no. 51417 from dropdown ""to account #"""
+,"4. Click button ""TRANSFER"""
+Expected Result,Transfer is rejected and the user is informed that the amount must be greater than $0. No specification available; based on standard banking rules.
+Actual Result,"Transfer successfuly realized with message: ""Transfer Complete! $ 0.00 has been transferred from account #51528 to account #51417.
+See Account Activity for more details.""
+Observed afterwards: balances unchanged (51528: $100.00, 51417: -$84.50).
+A $0.00 transaction was recorded in Account Activity (Transaction ID 79300)."
+Reproducibility,3/3
+Evidence,Screenshot_BUG_003a.png
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+Related items,"TS_064, no TC exists yet, BUG_003b"
+Status,New

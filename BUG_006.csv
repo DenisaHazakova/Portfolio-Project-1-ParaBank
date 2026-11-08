@@ -1,0 +1,41 @@
+Bug ID,BUG_006
+Title,"Transfer of $200 is accepted when source account balance is $100, resulting in a negative balance"
+Severity,Critical (account goes to -$100.00 and the bank's balance check is bypassed)
+Type,Functional
+Feature,Transfer Funds
+Environment,"Chrome (150.0.7871.125 ), macOS 12.7.5, https://parabank.parasoft.com/parabank (2026-11-08)"
+Preconditions,User has already registered and logged in with username janmadarsky. User is located on url https://parabank.parasoft.com/parabank/transfer.htm User has balance of $415.50 on account no. 31881 and $100.00 on account no. 33768. Balances result from registering a new user (default account) and then opening a second account (minimum deposit $100.00).
+Steps to Reproduce,"1. Type value of 200 in field ""Amount:"""
+,"2. Select option 33768 from dropdown ""From account #"""
+,"3. Select option 31881 from dropdown ""to account #"""
+,"4. Click button ""TRANSFER"""
+Expected Result,Transfer rejected. User is notified about insufficient funds. Based on standard banking rules; no specification available.
+Actual Result,"Website displays: ""Transfer Complete!
+$200.00 has been transferred from account #33768 to account #31881.
+See Account Activity for more details.""
+Observed in Accounts Overview afterwards: 
+- 31881: $415.50 -> $615.50 (+ $200.00),
+- 33768: $100.00 -> -$100.00 (- $200.00).
+A $200.00 transaction was recorded in Account Activity (Transaction ID 47998)."
+Reproducibility,3/3
+Evidence,Screenshot1_BUG_006.png
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,Screenshot2_BUG_006.png
+,
+,Screenshot3_BUG_006.png
+,
+,Screenshot4_BUG_003.png
+,
+Related items,"TS_065, TC_015 (original finding; reproduced on a new user, 2026-11-08)"
+Status,New

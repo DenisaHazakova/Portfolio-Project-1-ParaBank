@@ -1,0 +1,33 @@
+Bug ID,BUG_002
+Title,User can create a new account with insufficient balance on account
+Severity,Critical (Bank’s minimum-deposit rule is bypassed.)
+Type,Functional
+Feature,Open New Account
+Environment,"Chrome (150.0.7871.125 ), macOS 12.7.5, https://parabank.parasoft.com/parabank (2026-11-07)"
+Preconditions,User has already registered and logged in with username janmadarsky. User is located on url https://parabank.parasoft.com/parabank/index.htm. User has balance of $ 15.50 on account number 51417.
+Steps to Reproduce,1. Click on link Open New Account on the left side of Account Services.
+,"2. Select CHECKING option from dropdown ""What type of Account would you like to open?"""
+,3. Select account number 51417 from dropdown 
+,"4. Click on button ""OPEN NEW ACCOUNT"""
+Expected Result,"Account is not created, and the user is informed that the minimum opening deposit of $100 is not available on the selected account."
+Actual Result,"Account successfuly created with following message: ""Account Opened! Congratulations, your account is now open.
+Your new account number: 51528"". Balance of account no. 51417 changed to -$84.50 and balance of created account no. 51528 is $100.00."
+Reproducibility,3/3
+Evidence,Screenshot_BUG_002.png
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,Screenshot_2_BUG_002.png
+,"
+
+"
+Related items,"TC_009, TS_038"
+Status,New

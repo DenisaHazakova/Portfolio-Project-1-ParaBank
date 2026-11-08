@@ -1,0 +1,48 @@
+Bug ID,BUG_007
+Title,"Bill of amount of $700 is accepted when source account balance is $615.50, resulting in a negative balance."
+Severity,Critical (payment exceeding the balance is accepted; account goes to -$84.50 and the bank's balance check is bypassed)
+Type,Functional
+Feature,Bill Payment
+Environment,"Chrome (150.0.7871.125 ), macOS 12.7.5, https://parabank.parasoft.com/parabank (2026-11-08)"
+Preconditions,"User has already registered and logged in with username janmadarsky. User is located on url https://parabank.parasoft.com/parabank/billpay.htm 
+User has balance of $615.50 on account no. 31881 and -$100.00 on account no. 33768. Balances result from testing BUG_006."
+Steps to Reproduce,"1. Type ""Jan Prvy"" in field ""Payee Name:"""
+,"2. Type ""Prva 1"" in field ""Address:"""
+,"3. Type ""Bratislava"" in field ""City:"""
+,"4. Type ""Slovakia"" in field ""State:"""
+,"5. Type ""82106"" in field ""Zip Code"""
+,"6. Type ""+421900600500"" in field ""Phone #:"""
+,"7. Type ""123"" in field ""Account #:"""
+,"8. Type ""123"" in field ""Verify Account #:"""
+,"9. Type ""700"" in field ""Amount: $"""
+,"10. Select option ""31881"" from dropdown ""From account #:"""
+,"11. Click button ""SEND PAYMENT"""
+Expected Result,Bill payment rejected. User is notified about insufficient funds. Based on standard banking rules; no specification available.
+Actual Result,"Website displays: ""Bill Payment Complete
+Bill Payment to Jan Prvy in the amount of $700.00 from account 31881 was successful.
+See Account Activity for more details.""
+Observed in Accounts Overview afterwards: 
+- 31881: $615.50-> -$84.50 (-$700.00), Available Amount $0.00
+A $700.00 transaction was recorded in Account Activity (Transaction ID 53659)."
+Reproducibility,1/1
+Evidence,Screenshot1_BUG_007.png
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,
+,Screenshot2_BUG_007.png
+,
+,Screenshot3_BUG_007.png
+,
+,Screenshot4_BUG_007.png
+,
+Related items,"TS_093, TC_019, Test data reused from BUG_006."
+Status,New
