@@ -25,19 +25,7 @@ Observed in Accounts Overview afterwards:
 - 31881: $615.50-> -$84.50 (-$700.00), Available Amount $0.00
 A $700.00 transaction was recorded in Account Activity (Transaction ID 53659)."
 Reproducibility,1/1
-Evidence,Screenshot1_BUG_007.png
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
+Evidence,https://github.com/DenisaHazakova/Portfolio-Project-1-ParaBank/blob/08f6f6ed16c4cc4e25f493ddf56bb1ffb74618f8/screenshots/Screenshot1_BUG_007.png
 ,Screenshot2_BUG_007.png
 ,
 ,Screenshot3_BUG_007.png
