@@ -1,0 +1,11 @@
+Bug,Related TS,Related TC,Scenario,Result,Type of bug,Severity,Status,Notes
+BUG_001,TS_033,TC_007 (Login),Verify user cannot access account pages after logout,Fail,Security,Low,New,
+BUG_002,TS_038,TC_009,Verify new account cannot be created when balance on existing account is less than 100$,Fail,Functional,Critical,New,
+BUG_003a,TS_064,-,Verify transfer of 0$ is not possible,Found during exploration,Functional (input validation),Medium,New,
+BUG_003b,TS_068,-,Verify transfer of negative amount is not possible,Found during exploration,Functional (input validation),Medium,New,
+BUG_004,TS_051,TC_013,Verify Balance amount is correctly displayed on Account Details page,Pass,-,,Rejected,not a defect
+BUG_005,TS_022,-,Verify successful login with valid credentials,Pass,-,,Rejected,Login credentials stopped working after demo website reset database.
+BUG_006,TS_065,TC_015,Verify transfer of amount higher than balance is not successful,Fail,Functional (business rule),Critical,New,
+BUG_007,TS_093,TC_019,Verify amount higher than balance in Bill Pay is not accepted,Fail,Functional (business rule),Critical,New,
+BUG_008,TS_122,TC_025,Verify confirmation message after clicking Update Profile,Fail,Content / UI text,Low,New,
+BUG_009,"TS_126, TS_129",TC_027,Verify loan request redirects to a page with loan details,Pass,Functional,,Cannot Reproduce,not a defect
