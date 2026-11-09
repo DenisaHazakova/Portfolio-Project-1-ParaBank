@@ -1,0 +1,128 @@
+{
+  "info": {
+    "_postman_id": "82929b07-6727-469f-ad20-7ef0015408e4",
+    "name": "ParaBank API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56048584",
+    "_collection_link": "https://go.postman.co/collection/56048584-82929b07-6727-469f-ad20-7ef0015408e4?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create Account",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/createAccount?newAccountType=1&customerId={{customerId}}&fromAccountId=15342",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "createAccount"
+          ],
+          "query": [
+            {
+              "key": "newAccountType",
+              "value": "1"
+            },
+            {
+              "key": "customerId",
+              "value": "{{customerId}}"
+            },
+            {
+              "key": "fromAccountId",
+              "value": "15342"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Created Account",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/accounts/15897",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "accounts",
+            "15897"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Customer",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/customers/{{customerId}}/accounts",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "customers",
+            "{{customerId}}",
+            "accounts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Account overview",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/accounts/15120",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "accounts",
+            "15120"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bank Transfer Created",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/transfer?fromAccountId=15342&toAccountId=15897&amount=50",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "transfer"
+          ],
+          "query": [
+            {
+              "key": "fromAccountId",
+              "value": "15342"
+            },
+            {
+              "key": "toAccountId",
+              "value": "15897"
+            },
+            {
+              "key": "amount",
+              "value": "50"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
